@@ -1,0 +1,41 @@
+version: '3.3'
+
+services: 
+    wordpress:
+        build: .
+        restart: always
+        ports: 
+            - 80:80
+        environment: 
+            WORDPRESS_DB_HOST: kldb
+            WORDPRESS_DB_USER: wordpress
+            WORDPRESS_DB_PASSWORD: wordpress
+            WORDPRESS_DB_NAME: wordpress
+        volumes: 
+            - ./plugins:/var/www/html/wp-content/plugins/vilmamarques-plugin
+
+    db:
+        image: mysql:5.7
+        restart: always
+        environment: 
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: worgsdpress
+            MYSQL_RANDOM_ROOT_PASSWORD: myrootpass
+        volumes: 
+            - db:/var/lib/mysql
+
+    phpmyadmin:
+      depends_on:
+        - db
+      image: phpmyadmin/phpmyadmin
+      restart: always
+      ports:
+        - 81:80
+      environment:
+        PMA_HOST: db:3306
+        MYSQL_ROOT_PASSWORD: myrootpass
+    
+        
+volumes: 
+    db:
