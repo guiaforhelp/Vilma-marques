@@ -1,0 +1,64 @@
+menu-posts, #menu-comments, #toplevel_page_elementor, #menu-posts-elementor_library, #toplevel_page_eael-settings, 
+#toplevel_page_jet-dashboard, #menu-appearance, #menu-plugins, #menu-tools, #toplevel_page_ai1wm_export, #toplevel_page_wpseo_dashboard, #toplevel_page_wpseo_dashboard,
+#toplevel_page_wpseo_dashboard, #toplevel_page_essential-blocks, #toplevel_page_wpseo_dashboard, #toplevel_page_sucuriscan, #toplevel_page_sucuriscan, #toplevel_page_w3tc>
+ {
+    display: none !important;
+}
+
+/*#toplevel_page_jet-engine*/
+/*#menu-posts-jet-smart-filters*/
+
+
+.mode-switcher {
+    display: flex;
+    width: auto;
+}
+
+.setting-switcher {
+    display: flex;
+    justify-content: flex-start;
+    width: 383px;
+    align-items: center;
+    font-size: 1rem;
+    flex-wrap: wrap;
+}
+
+.setting-switcher span {
+    font-size: 13px;
+    width: 290px;
+    margin-bottom: 15px;
+}
+
+.switcher-ad, .switcher-b {
+    background: #49c66a;
+    width: 53px;
+    border-radius: 17px;
+    padding: 1px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-switcher {
+    margin-right: 14px;
+}
+
+.switcher-active-text-ad, .switcher-active-text-b {
+    color: #ffffff;
+    font-size: 0.6rem;
+    margin-left: 5px
+}
+
+.switcher-active-ad, .switcher-active-b {
+    background: #fff;
+    width: auto;
+    padding: 11px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/*--Removendo a barra de pesquisa de post no painel imóveis--*/
+#wpseo-filter, #wpseo-readability-filter {
+    display: none;
+}
