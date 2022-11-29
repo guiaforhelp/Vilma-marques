@@ -202,7 +202,7 @@ function getCookie(nome) {
     return null;
 }
 
-//--inserindo código de Imóvel cadastrado automaticamente no formulario IMOVEL--//
+/*//--inserindo código de Imóvel cadastrado automaticamente no formulario IMOVEL--//
 jQuery(window).load(()=>{
 
     var str = getCookie(document.cookie = 'codVilmaMarques');
@@ -222,4 +222,39 @@ jQuery(window).load(()=>{
             form_cod.val("AA" + (parseInt(str_v)+1) + "V");
         });
     }
-});
+});*/
+
+
+//---MASCARAS NO PAINEL ADMIN--//
+
+/* Máscaras ER */
+function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascara()",1)
+}
+function execmascara(){
+    v_obj.value=v_fun(v_obj.value)
+}
+function mtel(v){
+    v=v.replace(/\D/g,"");     //Remove tudo o que não é dígito       
+    v=v.replace(/(\d{1})(\d{3})$/,"$1.$2");  //Coloca um ponto entre o terceiro
+    
+    //se for maior que 1 milhão acrescenta um ponto depois do primeiro numero
+    if(v >= 1000){
+        //console.log('maior q 1 milhão');
+        v=v.replace(/^(\d{1})(\d)/g,"$1.$2"); //Coloca um ponto depois do primeiro numero
+    }
+    return v;
+}
+function id( el ){
+    return document.querySelector( el );
+}
+
+window.onload = function(){
+   
+    document.querySelector('#_preco').onkeypress = function(){
+        mascara( this, mtel ); 
+    }   
+         
+}
