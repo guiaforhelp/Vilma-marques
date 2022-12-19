@@ -16,5 +16,6 @@ define('VILMA_MARQUES_PATH', plugin_dir_path(VILMA_MARQUES__FILE__));
 define('VILMA_MARQUES_BASENAME', plugin_basename(VILMA_MARQUES__FILE__));
 define('VILMA_MARQUES_PLUGIN_URL', plugin_dir_url(VILMA_MARQUES__FILE__). 'content/');
 define('VILMA_MARQUES_CONTENT', VILMA_MARQUES_PATH. 'content/');
- require VILMA_MARQUES_CONTENT .'function.php';
+
+require VILMA_MARQUES_CONTENT .'function.php'; 
 ?>

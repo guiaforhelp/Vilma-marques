@@ -43,7 +43,7 @@ const jet_engine = jQuery('.toplevel_page_jet-engine');
 //--setado quando o paniel do wordpress é carregado--//
 jQuery(window).load(()=>{
     //modo basic
-    switcher_init = false;
+    switcher_init = true;
     switcher_b.css({'background': '#49c66a'});
     switcher_active_b.css({'transform': 'translateX(0px)'});
     switcher_active_text_b.css({'transform': 'translateX(0px)'});
@@ -57,7 +57,7 @@ jQuery(window).load(()=>{
     switcher_active_text.text('OFF');
     
     //setando menu wordpress
-    menu_post.css({'display': 'none'});
+    /*menu_post.css({'display': 'none'});
     menu_pages.css({'display': 'none'});
     menu_coments.css({'display': 'none'});
     menu_elementor.css({'display': 'none'});
@@ -72,7 +72,7 @@ jQuery(window).load(()=>{
     smart_filters.css({'display': 'none'});
     sucuri_antivirus.css({'display': 'none'});
     cache_w3tc.css({'display': 'none'});
-    jet_engine.css({'display': 'none'});
+    jet_engine.css({'display': 'none'});*/
 });
 
 
@@ -80,7 +80,7 @@ jQuery(window).load(()=>{
 switcher_basic.click(()=>{    
     if(switcher_init == true){
         //modo basic
-        switcher_init = true;   
+        switcher_init = false;   
         switcher_b.css({'background': '#acc9b4'});     
         switcher_active_b.css({'transform': 'translateX(-31px)'});
         switcher_active_text_b.css({'transform': 'translateX(25px)'});
@@ -127,22 +127,22 @@ switcher_basic.click(()=>{
         switcher_active_text.text('OFF');
         
         //setando menu wordpress
-        menu_post.css({'display': 'none'});
+       /* menu_post.css({'display': 'none'});
         menu_pages.css({'display': 'none'});
         menu_coments.css({'display': 'none'});
         menu_elementor.css({'display': 'none'});
         aparencias.css({'display': 'none'});
-        plugins.css({'display': 'block'}); /*--plugins do wordpress--*/
-        ferramentas_wordpress.css({'display': 'none'}); 
+        plugins.css({'display': 'none'});
+        ferramentas_wordpress.css({'display': 'none'});
         menu_modelos_elementor.css({'display': 'none'});
         essential_addons.css({'display': 'none'});
-        crocloblock.css({'display': 'block'}); /*--plugins do crocloblock--*/
+        crocloblock.css({'display': 'none'});
         yoast_seo.css({'display': 'none'});
         essential_block.css({'display': 'none'});
         smart_filters.css({'display': 'none'});
         sucuri_antivirus.css({'display': 'none'});
         cache_w3tc.css({'display': 'none'});
-        jet_engine.css({'display': 'none'});
+        jet_engine.css({'display': 'none'});*/
     }
 });
 
@@ -202,7 +202,7 @@ function getCookie(nome) {
     return null;
 }
 
-/*//--inserindo código de Imóvel cadastrado automaticamente no formulario IMOVEL--//
+//--inserindo código de Imóvel cadastrado automaticamente no formulario IMOVEL--//
 jQuery(window).load(()=>{
 
     var str = getCookie(document.cookie = 'codVilmaMarques');
@@ -222,7 +222,7 @@ jQuery(window).load(()=>{
             form_cod.val("AA" + (parseInt(str_v)+1) + "V");
         });
     }
-});*/
+});
 
 
 //---MASCARAS NO PAINEL ADMIN--//
@@ -253,7 +253,23 @@ function id( el ){
 
 window.onload = function(){
    
-    document.querySelector('#_preco').onkeypress = function(){
+    document.querySelector('#_preco-maximo').onkeypress = function(){
+        mascara( this, mtel ); 
+    }  
+	
+	document.querySelector('#_condominio').onkeypress = function(){
+        mascara( this, mtel ); 
+    }   
+	
+	document.querySelector('#_iptu').onkeypress = function(){
+        mascara( this, mtel ); 
+    } 
+	
+	document.querySelector('#_area-imovel').onkeypress = function(){
+        mascara( this, mtel ); 
+    }   
+	
+	document.querySelector('#_terreno').onkeypress = function(){
         mascara( this, mtel ); 
     }   
          

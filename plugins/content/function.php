@@ -1,6 +1,7 @@
 <?php
 require VILMA_MARQUES_CONTENT .'page-menu.php';
 require VILMA_MARQUES_CONTENT .'form.php';
+require VILMA_MARQUES_CONTENT .'config-container-elementor.php';
 
 /** Style CSS e JS */
 
@@ -12,6 +13,7 @@ function load_admin_style() {
 
 function load_style(){
    wp_enqueue_script('script-vilma-js', VILMA_MARQUES_PLUGIN_URL. 'js/script-vilma.js', array('jquery'), VERSION, true);
+   wp_enqueue_script('search-vilma-js', VILMA_MARQUES_PLUGIN_URL. 'js/search-vilma.js', array('jquery'), VERSION, true);
 }
 
 
@@ -65,3 +67,9 @@ add_action( 'admin_enqueue_scripts', 'load_admin_style' );
 add_action( 'wp_enqueue_scripts', 'load_style' );
 
 add_action( 'admin_head', 'searchCod' );
+
+
+/*--Criando icone no elementor--*/
+add_action( 'elementor/controls/register', 'register_currency_control' );
+add_action( 'elementor/widgets/register', 'register_currency_widget' );
+add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
