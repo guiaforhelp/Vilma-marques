@@ -87,3 +87,126 @@ price_value_mobile.addEventListener('keyup', priceValuee8b216e);
 area_min_mobile.addEventListener('keyup', areaMin7f4baff);
 
 
+
+
+//--PAGINAÇÃO--//
+/*
+/ setando as paginações 
+EXEMPLO: <div class="num-pag-item pag-item-active">1</div>
+*/
+let quant_post = 5;
+let total_pages = cards.length / quant_post;
+function paginationFunction(){
+      
+    for(let num_pg of num_pag_itens){
+        let data_page_value = num_pg.getAttribute('data-page_value');
+
+        for(let i=0; i<cards.length; i++){
+            if(i < quant_post && data_page_value == pag_item_active){
+                //console.log(data_page_value);
+                cards[i].style.display = 'block';
+            }else {
+                cards[i].style.display = 'none';
+            }
+
+            if(quant_post > i){
+                console.log('é maoir q ', quant_post);
+            }
+        }
+    }
+          
+}
+
+window.addEventListener('load', paginationFunction);
+
+
+//const pag_item_container = document.querySelector('.num-pag-item');
+const data_pg_container = pagination_itens.getAttribute('data-page_value');
+
+//--Criando as paginações--//
+//function PageNumeration(){
+    document.cookie = 'pagination='+total_pages;
+//   for(let n=0; n<=10; n++){
+ //       console.log(num_pag_itens[n]);
+ //       pagination_itens.innerHTML = num_pag_itens[n];
+ //   }
+//}
+
+num_pag_itens[0].classList.add('pag-item-active');
+[].forEach.call(num_pag_itens, num_pag_item => {
+  num_pag_item.addEventListener('click', functionPageClick)
+})
+
+function functionPageClick() {
+   //console.log(PageNumeration());
+
+  // use a função Array para lexical this
+  [].forEach.call(num_pag_itens, num_pag_item => {
+    // exceto para o elemento clicado, remova a classe ativa
+    if (num_pag_item !== this) {
+        num_pag_item.classList.remove('pag-item-active');
+    }
+  });
+
+  // alternar ativo no botão clicado
+  this.classList.add('pag-item-active');
+  pagination_itens.setAttribute('data-page_value', this.textContent);
+}
+
+
+/*
+/ tratando botões next e prev
+*/
+const next_pag = document.querySelector('.next-pag');
+const prev_pag = document.querySelector('.prev-pag');
+
+//SETANDO BOTÃO NEXT
+function functionNext(cont){
+    // Obtém elemento da página atual
+  var pagAtual = document.querySelector('.pag-item-active');
+  
+  // Removendo class da pg anterior
+  if(pagination_itens.getAttribute('data-page_value') != num_pag_itens.length){
+      pagAtual.classList.remove('pag-item-active');      
+  }
+  
+  // Obtém o valor da prox pg
+  var numNovaPagina = pagination_itens.getAttribute('data-page_value');
+  
+  // Seleciona a nova página
+  if(num_pag_itens[numNovaPagina]){
+      //console.log(num_pag_itens[numNovaPagina]);
+      var novaPagina = num_pag_itens[numNovaPagina];
+      novaPagina.classList.add('pag-item-active');
+      pagination_itens.setAttribute('data-page_value', novaPagina.textContent);
+  }  
+
+  
+}
+
+//SETANDO BOTÃO PREV
+function functionPrev(cont){
+    // Obtém elemento da página atual
+  var pagAtual = document.querySelector('.pag-item-active');
+  
+  // Removendo class da pg anterior
+  if(pagination_itens.getAttribute('data-page_value') != 1){
+      pagAtual.classList.remove('pag-item-active');      
+      console.log(num_pag_itens[pagAtual.textContent]);
+  }
+  
+  // Obtém o valor da anterior pg
+  var numNovaPagina = pagination_itens.getAttribute('data-page_value')-2;
+  
+  // Seleciona a nova página
+  if(num_pag_itens[numNovaPagina]){
+      var novaPagina = num_pag_itens[numNovaPagina];
+      novaPagina.classList.add('pag-item-active');
+      pagination_itens.setAttribute('data-page_value', novaPagina.textContent);      
+  }  
+
+  
+}
+
+//next_pag.addEventListener('click', functionNext);
+//prev_pag.addEventListener('click', functionPrev);

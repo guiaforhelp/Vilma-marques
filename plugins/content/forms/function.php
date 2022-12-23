@@ -13,7 +13,8 @@ function register_currency_control( $controls_manager ) {
 
     //--Wishlist
     require CONTENT_WIDGETS_ELEMENTOR . 'currency.php';    
-    $controls_manager->register( new \Elementor_Currency_Control_Flavia_translate() );
+    $controls_manager->register( new \Elementor_Currency_Control_Vilma_forms() );
+	$controls_manager->register( new \Elementor_Currency_Control_Vilma_pagination() );
 }
 
  
@@ -24,7 +25,8 @@ function register_currency_widget( $widgets_manager ) {
     
     //--Widget de teste
 	require CONTENT_WIDGETS_ELEMENTOR . 'currency-widget.php';
-    $widgets_manager->register( new \Elementor_Currency_Flavia_translate() );   
+    $widgets_manager->register( new \Elementor_Currency_Vilma_forms() );   
+	$widgets_manager->register( new \Elementor_Currency_Vilma_pagination() ); 
 }
 
 /**

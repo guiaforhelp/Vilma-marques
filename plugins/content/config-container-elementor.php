@@ -1,7 +1,13 @@
 <?php
 //--Configurações--//
-$pasta_container = 'forms';
-$nome_category = 'Vilma Marques';
+
+//--CATEGORIA--//
+$nome_category = 'Vilma Marques'; //--Nome da categoria--//
+
+//--FORMS--//
+$pasta_container = 'forms'; //--nome da pasta--//
+
+
 
 //Caminhos para criação de widgets para elementor
 define('CONTENT__FILE__', __FILE__);

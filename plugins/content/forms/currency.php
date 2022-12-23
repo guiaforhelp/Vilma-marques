@@ -4,13 +4,35 @@
  * 
  * Criando uma classe para o conteúdo do widget e extendendo a classe padrão do elementor
  */
-class Elementor_Currency_Control_Flavia_translate extends \Elementor\Base_Data_Control {
+class Elementor_Currency_Control_Vilma_forms extends \Elementor\Base_Data_Control {
 
 	/**
 	 * Definindo o tipo de conteúdo
 	 */
 	public function get_type() {
 		return 'caixa de pesquisa';
+	}
+
+	
+
+	/**
+	 * Conteúdo que será renderizado no widget
+	 */
+	public function content_template() {
+		
+	}
+
+}
+
+
+//--PAGINATION--//
+class Elementor_Currency_Control_Vilma_pagination extends \Elementor\Base_Data_Control {
+
+	/**
+	 * Definindo o tipo de conteúdo
+	 */
+	public function get_type() {
+		return 'Paginação';
 	}
 
 	

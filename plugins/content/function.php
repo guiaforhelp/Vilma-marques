@@ -14,6 +14,7 @@ function load_admin_style() {
 function load_style(){
    wp_enqueue_script('script-vilma-js', VILMA_MARQUES_PLUGIN_URL. 'js/script-vilma.js', array('jquery'), VERSION, true);
    wp_enqueue_script('search-vilma-js', VILMA_MARQUES_PLUGIN_URL. 'js/search-vilma.js', array('jquery'), VERSION, true);
+   wp_enqueue_script('pagination-vilma-js', VILMA_MARQUES_PLUGIN_URL. 'js/pagination-vilma.js', array('jquery'), VERSION, true);
 }
 
 
