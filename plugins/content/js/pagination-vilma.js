@@ -145,26 +145,30 @@ init();
 
 const filter_price = document.querySelector('.filter_price');
 const filter_area = document.querySelector('.filter_area');
-const bloco_1 = document.querySelector('#bloco-1');
-const bloco_2 = document.querySelector('#bloco-2');
-filter_price.addEventListener('keyup', ()=>{
+const filter_quartos = document.querySelector('.filter_quartos');
+const select_fiters = document.querySelector('.select_fiters');
 
-    if(filter_price.value != ''){
-        bloco_1.style.display = 'none';
-        bloco_2.style.display = 'flex';
-    }else {
-        bloco_1.style.display = 'flex';
-        bloco_2.style.display = 'none';
-    }
-});
+var filters = [
+    '.filter_price',
+    '.filter_area',
+    '.filter_quartos',
+    '.select_fiters'
+];
 
-filter_area.addEventListener('keyup', ()=>{
+for(let filter of filters) {
+    document.querySelector(filter).addEventListener('keyup', ()=>{
+    
+        const bloco_1 = document.querySelector('#bloco-1');
+        const bloco_2 = document.querySelector('#bloco-2');
+        if(document.querySelector(filter).value == ''){
+            bloco_1.style.display = 'flex';
+            bloco_2.style.display = 'none';
+            console.log('bloco 2 vazio', filter.value);
+        }else {
+            bloco_1.style.display = 'none';
+            bloco_2.style.display = 'flex';
+            console.log('bloco 1 vazio', filter.value);
+        }
+    });
+}
 
-    if(filter_area.value != ''){
-        bloco_1.style.display = 'none';
-        bloco_2.style.display = 'flex';
-    }else {
-        bloco_1.style.display = 'flex';
-        bloco_2.style.display = 'none';
-    }
-});

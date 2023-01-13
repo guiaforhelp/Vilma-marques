@@ -40,6 +40,10 @@ menu-posts, #menu-comments, #toplevel_page_elementor, #menu-posts-elementor_libr
     align-items: center;
 }
 
+.switcher-disable {
+    background: #acc9b4;
+}
+
 .text-switcher {
     margin-right: 14px;
 }

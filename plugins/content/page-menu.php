@@ -13,7 +13,7 @@ function settingFilterVilma(){
         <h3>Modo Básico</h3>
         <span>Este é o modo padrão aonde o sistema mostra somente as configurações principais</span>
         <div class="text-switcher">Modo básico</div>
-        <div id="switcher-basic" class="switcher-b">    
+        <div id="switcher-basic" data-active="on" class="switcher-b">    
             <div class="switcher-active-text-b">ON</div>
             <div class="switcher-active-b"></div>
         </div>
@@ -23,7 +23,7 @@ function settingFilterVilma(){
         <h3>Modo Avançado</h3>
         <span>Este é o modo é apropriado para desenvolvedores aonde mostrar informações mais avançadas para as configurações de plugins, temas e outros</span>
         <div class="text-switcher">Modo Avançado</div>
-        <div id="switcher-advanced" class="switcher-ad">    
+        <div id="switcher-advanced" data-active="off" class="switcher-ad">    
             <div class="switcher-active-text-ad">ON</div>
             <div class="switcher-active-ad"></div>
         </div>
