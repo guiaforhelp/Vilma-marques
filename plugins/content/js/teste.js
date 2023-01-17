@@ -30,7 +30,6 @@ const buttonv = {
                         head.get('.background-notice-form').classList.add('background-notice-active');
                     }
                 }
-
             });
         }
     },
