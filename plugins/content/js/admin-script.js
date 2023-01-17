@@ -133,6 +133,7 @@ const buttons = {
         });     
         
         buttons.switcher();
+        buttons.dataActive();
         controls.createListeners(true);
     }
 }

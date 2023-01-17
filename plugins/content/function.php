@@ -2,13 +2,16 @@
 require VILMA_MARQUES_CONTENT .'page-menu.php';
 require VILMA_MARQUES_CONTENT .'form.php';
 require VILMA_MARQUES_CONTENT .'config-container-elementor.php';
+require VILMA_MARQUES_CONTENT .'notifications/function.php';
 
 /** Style CSS e JS */
 
 /** acesso ao styles admin */
 function load_admin_style() {
    wp_enqueue_style( 'vilma-css', VILMA_MARQUES_PLUGIN_URL. 'css/admin-style.css', false, VERSION, 'all');
+   wp_enqueue_style( 'notifications-css', VILMA_MARQUES_PLUGIN_URL. 'css/notifications.css', false, VERSION, 'all');
    wp_enqueue_script('vilma-js', VILMA_MARQUES_PLUGIN_URL. 'js/admin-script.js', array('jquery'), VERSION, true);
+   wp_enqueue_script('teste-vilma-js', VILMA_MARQUES_PLUGIN_URL. 'js/teste.js', array('jquery'), VERSION, true);
 }
 
 function load_style(){
@@ -59,6 +62,9 @@ function vilma_menu_add_admin_page() {
 function pg_submenu(){
    echo selectUserPg();
 }*/
+
+/** Notificações */
+add_action( 'admin_notices', 'notificationSearchForm' );
 
 /** criando menu */
 add_action( 'admin_menu', 'vilma_menu_add_admin_page' );
