@@ -1,7 +1,7 @@
 p.search-box-active {
     float: none !important;    
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
 }
 
 .background-notice-active {
@@ -9,7 +9,7 @@ p.search-box-active {
 }
 
 .background-notice-form {
-    background: #000000ba;;
+    background: #000000ba;
     position: fixed;
     top: 0px;
     bottom: 0px;
@@ -36,6 +36,13 @@ p.search-box-active {
     width: 806px;
     padding-bottom: 16px;
     box-shadow: 11px 12px 19px 0px #0000006e;
+}
+
+.container-notice p {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 15px;
 }
 
 .notice-menu, .notice-search-form {
@@ -74,4 +81,5 @@ p.search-box-active {
     font-size: 13px;
     line-height: 1.5em;
     color: #50575e;
+    margin-left: -103px;
 }

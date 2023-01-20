@@ -9,29 +9,21 @@ const head = {
     },
 
     formInput(){    
-        var html_head = '<div class="input-form-vilma"><input type="search" id="post-search-input" name="searchm" value=""><input type="button" id="search-submit" class="button buttonv" value="Pesquisar por código"></div>';
-        var html_head_2 = '<div class="input-form-vilma"><input type="search" id="post-search-input" name="searchp" value=""><input type="button" id="search-submit" class="button buttonv" value="Pesquisar por preço"></div>';            
+        var html_head = '<div class="input-form-vilma"><input type="search" placeholder="Digite código ou preço" class="search-cod" id="post-search-input" name="searchm" value=""><input type="submit" id="search-submit" class="button buttonv" value="Pesquisar"></div>';
+        var html_head_2 = '<div class="input-form-vilma"><input type="search" class="search-price" id="post-search-input" name="searchp" value=""><input type="submit" id="search-submit" class="button buttonv" value="Pesquisar por preço"></div>';   
+        var html_head_hidden = '<input type="hidden" name="active" value="true">';         
                        
-       head.get('.search-box').innerHTML = html_head_2 + html_head;
+       head.get('.search-box').innerHTML = html_head_hidden + html_head;
     },
     
     update(){
-        head.get('.search-box').classList.add('search-box-active');
+        head.get('.search-box').classList.add('search-box-active');       
     }
 }
 
 const buttonv = {
-    update(){
-        for(let button_click of head.getAll('.buttonv')){
-            button_click.addEventListener('click', ()=>{    
-                for(let post_search_input of head.getAll('#post-search-input')){
+    update(){  
 
-                    if(post_search_input.value != false){                         
-                        head.get('.background-notice-form').classList.add('background-notice-active');
-                    }
-                }
-            });
-        }
     },
 
     close(){
@@ -45,8 +37,8 @@ function init() {
     if(head.get('.wp-menu-open').id == 'menu-posts-_add_imovel'){      
         head.update();
         head.formInput();  
-        buttonv.update();     
-        buttonv.close();    
+        // buttonv.update();          
+        buttonv.close();         
     }
 }
 init();
