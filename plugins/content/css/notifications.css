@@ -4,6 +4,10 @@ p.search-box-active {
     justify-content: flex-end;
 }
 
+.input-form-vilma:first-of-type {
+    margin-right: 17px;
+}
+
 .background-notice-active {
     display: flex !important;
 }

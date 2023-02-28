@@ -11,7 +11,7 @@ function load_admin_style() {
    wp_enqueue_style( 'vilma-css', VILMA_MARQUES_PLUGIN_URL. 'css/admin-style.css', false, VERSION, 'all');
    wp_enqueue_style( 'notifications-css', VILMA_MARQUES_PLUGIN_URL. 'css/notifications.css', false, VERSION, 'all');
    wp_enqueue_script('vilma-js', VILMA_MARQUES_PLUGIN_URL. 'js/admin-script.js', array('jquery'), VERSION, true);
-   wp_enqueue_script('teste-vilma-js', VILMA_MARQUES_PLUGIN_URL. 'js/teste.js', array('jquery'), VERSION, true);
+   wp_enqueue_script('teste-vilma-js', VILMA_MARQUES_PLUGIN_URL. 'js/teste.js', array('jquery'), VERSION, true);   
 }
 
 function load_style(){

@@ -40,3 +40,6 @@ function add_elementor_widget_categories( $elements_manager ){
 		]
 	);
 }
+
+
+
